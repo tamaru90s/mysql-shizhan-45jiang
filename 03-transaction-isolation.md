@@ -49,7 +49,9 @@ MySQL中，每条记录在更新的时候都会同时记录一条回滚操作。
 
 ## 事务的启动方式
 
-MySQL的事务启动方式有以下几种： 1. 显式启动事务语句，begin或start transaction。配套的提交语句是 commit，回滚语句是rollback。 2. set autocommit=0，这个命令会将这个线程的自动提交关掉。意味着如果你只执行 一个select语句，这个事务就启动，而且并不会自动提交。这个事务持续存在直到你主动 执行commit或rollback语句，或者断开连接。
+MySQL的事务启动方式有以下几种：   
+1. 显式启动事务语句，begin或start transaction。配套的提交语句是 commit，回滚语句是rollback。 
+2. set autocommit=0，这个命令会将这个线程的自动提交关掉。意味着如果你只执行 一个select语句，这个事务就启动，而且并不会自动提交。这个事务持续存在直到你主动 执行commit或rollback语句，或者断开连接。
 
 建议总是使用set autocommit=1，通过显式语句的方式来启动事务。
 
